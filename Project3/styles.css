@@ -1,0 +1,132 @@
+/* Base styles */
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Background image for body */
+body {
+  background: url("https://images.pexels.com/photos/325117/pexels-photo-325117.jpeg")
+    center/cover fixed;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Container styling */
+#root {
+  position: relative;
+  width: 90%;
+  max-width: 450px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  background: rgba(30, 30, 30, 0); /* Adjust the alpha value for transparency */
+  padding: 20px;
+  z-index: 1;
+}
+
+#root::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.9)
+  );
+  z-index: -1;
+}
+
+/* Input and Button styles */
+#cityName,
+button {
+  width: calc(100% - 40px);
+  box-sizing: border-box;
+  padding: 15px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+#cityName {
+  background: rgb(35, 29, 29);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+button {
+  background: #59739a67;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1565c0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Weather info styles */
+#weatherInfo {
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+#weatherInfo.active {
+  opacity: 1;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  #root {
+    width: 95%;
+    margin-top: 20px;
+  }
+
+  #cityName,
+  button {
+    width: calc(100% - 20px);
+  }
+}
+
+/* Label styling */
+label {
+  margin-bottom: 5px;
+  color: #ccc;
+  text-align: center;
+}
+
+/* Input styling for dark theme */
+#cityName:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+}
+
+/* Example color schemes for dark theme inputs */
+:root {
+  --dark-bg: #121212;
+  --dark-text: #e0e0e0;
+  --dark-border: #292929;
+  --dark-focus-border: #3a3a3a;
+}
+
+/* Applying color schemes */
+#cityName {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+  border: 1px solid var(--dark-border);
+}
+
+#cityName:focus {
+  border-color: var(--dark-focus-border);
+}

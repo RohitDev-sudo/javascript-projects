@@ -1,0 +1,66 @@
+/* Basic styling for the calculator */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #282c34; /* Dark mode background color */
+  color: white; /* Dark mode text color */
+  font-family: Arial, sans-serif;
+}
+
+.calc-screen {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.calc-typed,
+.calc-operation {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  background-color: #282c34; /* Dark mode background color */
+  color: white; /* Dark mode text color */
+  text-align: right;
+}
+
+.btn {
+  width: 20%;
+  padding: 15px;
+  margin: 1%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-number {
+  background-color: #4d4d4d; /* Dark mode button color */
+  color: white; /* Dark mode button text color */
+}
+
+.btnOp {
+  background-color: #f09d51; /* Dark mode operation button color */
+  color: black; /* Dark mode operation button text color */
+}
+
+.btn-equal {
+  background-color: #2ecc71; /* Dark mode equal button color */
+}
+
+.btn-clear {
+  background-color: #c0392b; /* Dark mode clear button color */
+}
+
+/* Change button color on hover */
+.btn:hover {
+  opacity: 0.7;
+}
+
+/* Make the calculator responsive */
+@media (max-width: 600px) {
+  .btn {
+    width: 45%;
+  }
+}

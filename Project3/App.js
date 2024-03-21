@@ -14,7 +14,7 @@ function appendChildren(parent, ...children) {
 
 // Function to fetch weather data
 async function fetchWeather(cityName) {
-  const API_KEY = "29681469cd17c5f4057182fbb3f584db";
+  const API_KEY = "your api key";
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}`;
 
   try {
